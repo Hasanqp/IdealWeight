@@ -1,0 +1,365 @@
+﻿{
+  "Scenario": "Classification",
+  "DataSource": {
+    "Version": 3,
+    "EscapeCharacter": "\"",
+    "ReadMultiLines": false,
+    "KeepDiacritics": false,
+    "KeepPunctuations": false,
+    "AllowQuoting": false,
+    "Type": "TabularFile",
+    "FilePath": "C:\\Users\\user\\source\\repos\\IdealWeight\\obesity_data.csv",
+    "Delimiter": ",",
+    "DecimalMarker": ".",
+    "HasHeader": true,
+    "ColumnProperties": [
+      {
+        "ColumnName": "Age",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "Gender",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "Height",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "Weight",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "BMI",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "PhysicalActivityLevel",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "ObesityCategory",
+        "ColumnPurpose": "Label",
+        "ColumnDataFormat": "String",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 5
+      }
+    ]
+  },
+  "Environment": {
+    "Type": "LocalCPU",
+    "Version": 1
+  },
+  "RunHistory": {
+    "Version": 3,
+    "Type": "Result",
+    "Trials": [
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastTreeOva",
+        "Score": 0.99663647755753026,
+        "RuntimeInSeconds": 1.094,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4 * e11",
+          "e0": {
+            "OutputColumnNames": [
+              "Gender"
+            ],
+            "InputColumnNames": [
+              "Gender"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "Age",
+              "Height",
+              "Weight",
+              "BMI",
+              "PhysicalActivityLevel"
+            ],
+            "InputColumnNames": [
+              "Age",
+              "Height",
+              "Weight",
+              "BMI",
+              "PhysicalActivityLevel"
+            ]
+          },
+          "e11": {
+            "OutputColumnName": "PredictedLabel",
+            "InputColumnName": "PredictedLabel"
+          },
+          "e2": {
+            "InputColumnNames": [
+              "Gender",
+              "Age",
+              "Height",
+              "Weight",
+              "BMI",
+              "PhysicalActivityLevel"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e3": {
+            "OutputColumnName": "ObesityCategory",
+            "InputColumnName": "ObesityCategory",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e4": {
+            "NumberOfLeaves": 4,
+            "MinimumExampleCountPerLeaf": 23,
+            "NumberOfTrees": 6,
+            "MaximumBinCountPerFeature": 228,
+            "FeatureFraction": 0.99999999,
+            "LearningRate": 0.0986119499826579,
+            "LabelColumnName": "ObesityCategory",
+            "FeatureColumnName": "Features",
+            "DiskTranspose": false
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastTreeOva",
+        "Score": 0.99573047969187667,
+        "RuntimeInSeconds": 1.452,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4 * e11",
+          "e0": {
+            "OutputColumnNames": [
+              "Gender"
+            ],
+            "InputColumnNames": [
+              "Gender"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "Age",
+              "Height",
+              "Weight",
+              "BMI",
+              "PhysicalActivityLevel"
+            ],
+            "InputColumnNames": [
+              "Age",
+              "Height",
+              "Weight",
+              "BMI",
+              "PhysicalActivityLevel"
+            ]
+          },
+          "e11": {
+            "OutputColumnName": "PredictedLabel",
+            "InputColumnName": "PredictedLabel"
+          },
+          "e2": {
+            "InputColumnNames": [
+              "Gender",
+              "Age",
+              "Height",
+              "Weight",
+              "BMI",
+              "PhysicalActivityLevel"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e3": {
+            "OutputColumnName": "ObesityCategory",
+            "InputColumnName": "ObesityCategory",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e4": {
+            "NumberOfLeaves": 4,
+            "MinimumExampleCountPerLeaf": 20,
+            "NumberOfTrees": 4,
+            "MaximumBinCountPerFeature": 254,
+            "FeatureFraction": 1.0,
+            "LearningRate": 0.099999999999999978,
+            "LabelColumnName": "ObesityCategory",
+            "FeatureColumnName": "Features",
+            "DiskTranspose": false
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "LbfgsLogisticRegressionOva",
+        "Score": 0.926113754966671,
+        "RuntimeInSeconds": 0.337,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e7 * e11",
+          "e0": {
+            "OutputColumnNames": [
+              "Gender"
+            ],
+            "InputColumnNames": [
+              "Gender"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "Age",
+              "Height",
+              "Weight",
+              "BMI",
+              "PhysicalActivityLevel"
+            ],
+            "InputColumnNames": [
+              "Age",
+              "Height",
+              "Weight",
+              "BMI",
+              "PhysicalActivityLevel"
+            ]
+          },
+          "e11": {
+            "OutputColumnName": "PredictedLabel",
+            "InputColumnName": "PredictedLabel"
+          },
+          "e2": {
+            "InputColumnNames": [
+              "Gender",
+              "Age",
+              "Height",
+              "Weight",
+              "BMI",
+              "PhysicalActivityLevel"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e3": {
+            "OutputColumnName": "ObesityCategory",
+            "InputColumnName": "ObesityCategory",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e7": {
+            "L1Regularization": 0.6353545,
+            "L2Regularization": 0.26982167,
+            "LabelColumnName": "ObesityCategory",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "LbfgsLogisticRegressionOva",
+        "Score": 0.91892021500179921,
+        "RuntimeInSeconds": 0.871,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e7 * e11",
+          "e0": {
+            "OutputColumnNames": [
+              "Gender"
+            ],
+            "InputColumnNames": [
+              "Gender"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "Age",
+              "Height",
+              "Weight",
+              "BMI",
+              "PhysicalActivityLevel"
+            ],
+            "InputColumnNames": [
+              "Age",
+              "Height",
+              "Weight",
+              "BMI",
+              "PhysicalActivityLevel"
+            ]
+          },
+          "e11": {
+            "OutputColumnName": "PredictedLabel",
+            "InputColumnName": "PredictedLabel"
+          },
+          "e2": {
+            "InputColumnNames": [
+              "Gender",
+              "Age",
+              "Height",
+              "Weight",
+              "BMI",
+              "PhysicalActivityLevel"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e3": {
+            "OutputColumnName": "ObesityCategory",
+            "InputColumnName": "ObesityCategory",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e7": {
+            "L1Regularization": 1.0,
+            "L2Regularization": 1.0,
+            "LabelColumnName": "ObesityCategory",
+            "FeatureColumnName": "Features"
+          }
+        }
+      }
+    ],
+    "Estimators": {
+      "e0": "OneHotEncoding",
+      "e1": "ReplaceMissingValues",
+      "e2": "Concatenate",
+      "e3": "MapValueToKey",
+      "e4": "FastTreeOva",
+      "e5": "FastForestOva",
+      "e6": "LightGbmMulti",
+      "e7": "LbfgsLogisticRegressionOva",
+      "e8": "LbfgsMaximumEntropyMulti",
+      "e9": "SdcaMaximumEntropyMulti",
+      "e10": "SdcaLogisticRegressionOva",
+      "e11": "MapKeyToValue"
+    },
+    "Schema": "e0 * e1 * e2 * e3 * (e4 + e5 + e6 + e7 + e8 + e9 + e10) * e11",
+    "MetricName": "MacroAccuracy",
+    "ModelFilePath": "C:\\Users\\user\\source\\repos\\IdealWeight\\MLModel1.mlnet"
+  },
+  "Type": "TrainingConfig",
+  "Version": 5,
+  "TrainingOption": {
+    "Version": 2,
+    "Subsampling": false,
+    "Type": "ClassificationTrainingOption",
+    "TrainingTime": 10,
+    "LabelColumn": "ObesityCategory",
+    "ValidationOption": {
+      "Version": 0,
+      "Type": "CrossValidationValidationOption",
+      "NumberOfFolds": 5
+    }
+  }
+}
